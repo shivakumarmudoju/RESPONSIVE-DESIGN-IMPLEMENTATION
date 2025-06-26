@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farmers Welfare Support</title>
+  <style>
+    /* Base reset & styles */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7f1;
+      color: #2f3e2f;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Hero */
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 60px 20px 80px;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+    }
+    .cta-btn {
+      background: #2e7d32;
+      color: white;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.6);
+      transition: background 0.3s ease;
+    }
+    .cta-btn:hover {
+      background: #1b4d1b;
+    }
+
+    /* Benefits Section */
+    .benefits {
+      background: white;
+      padding: 40px 20px;
+      margin: -60px auto 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      max-width: 900px;
+      text-align: center;
+    }
+    .benefits h2 {
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #2e7d32;
+    }
+    .benefit-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .benefit-item {
+      flex: 1 1 250px;
+      background: #e8f5e9;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(46,125,50,0.15);
+      font-weight: 600;
+      color: #256029;
+      font-size: 1.1rem;
+      min-width: 220px;
+    }
+
+    /* Signup Section */
+    .signup-section {
+      background: white;
+      max-width: 480px;
+      margin: 0 auto 50px;
+      padding: 35px 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .signup-section h2 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #2e7d32;
+    }
+    form.signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    form.signup-form input[type="text"],
+    form.signup-form input[type="email"],
+    form.signup-form select {
+      padding: 14px 18px;
+      font-size: 1rem;
+      border: 1.5px solid #b2dfdb;
+      border-radius: 10px;
+      transition: border-color 0.3s ease;
+    }
+    form.signup-form input:focus,
+    form.signup-form select:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+    form.signup-form button {
+      margin-top: 10px;
+      padding: 16px;
+      background: #4caf50;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form.signup-form button:hover {
+      background: #357a38;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .testimonials h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #2e7d32;
+    }
+    .testimonial-item {
+      background: #e8f5e9;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(46,125,50,0.15);
+      margin-bottom: 25px;
+      font-style: italic;
+      color: #256029;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+      position: relative;
+    }
+    .testimonial-item::before {
+      content: "“";
+      font-size: 3rem;
+      color: #4caf50;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-weight: 700;
+    }
+    .testimonial-author {
+      margin-top: 15px;
+      font-weight: 700;
+      font-style: normal;
+      text-align: right;
+      color: #1b4d1b;
+      font-size: 1rem;
+    }
+
+    /* Partners Logos */
+    .partners {
+      text-align: center;
+      padding: 30px 20px 60px;
+    }
+    .partners p {
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      color: #2e7d32;
+    }
+    .partner-logos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      opacity: 0.7;
+      filter: grayscale(60%);
+    }
+    .partner-logos img {
+      max-height: 40px;
+      max-width: 130px;
+      object-fit: contain;
+      transition: filter 0.3s ease;
+    }
+    .partner-logos img:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .benefit-list {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .benefits h2,
+      .testimonials h2 {
+        font-size: 1.5rem;
+      }
+      .signup-section {
+        margin: 0 15px 50px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Empowering Farmers for a Better Tomorrow</h1>
+    <p>Join our farmers’ welfare program and get access to resources, training, and support to grow your livelihood sustainably.</p>
+    <button class="cta-btn" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Register Now</button>
+  </header>
+
+  <section class="benefits container" aria-label="Benefits of joining the program">
+    <h2>Why Join Our Program?</h2>
+    <div class="benefit-list">
+      <div class="benefit-item">Access to modern farming tools & techniques</div>
+      <div class="benefit-item">Financial aid and subsidies</div>
+      <div class="benefit-item">Training workshops and expert guidance</div>
+      <div class="benefit-item">Market access to sell your produce</div>
+      <div class="benefit-item">Community support and networking</div>
+    </div>
+  </section>
+
+  <section class="signup-section" id="signup" aria-label="Signup form for farmers welfare">
+    <h2>Sign Up for Support</h2>
+    <form class="signup-form" action="#" method="POST">
+      <input type="text" name="fullName" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <select name="state" required>
+        <option value="" disabled selected>Select Your State</option>
+        <option>State 1</option>
+        <option>State 2</option>
+        <option>State 3</option>
+      </select>
+      <button type="submit">Join Now</button>
+    </form>
+  </section>
+
+  <section class="testimonials container" aria-label="Testimonials from farmers">
+    <h2>Success Stories</h2>
+    <div class="testimonial-item">
+      "Thanks to this program, I learned new methods that doubled my crop yield last season. The support is amazing!"  
+      <div class="testimonial-author">— Rajesh Kumar, Farmer</div>
+    </div>
+    <div class="testimonial-item">
+      "The financial aid helped me buy better seeds and equipment. My farm is thriving now."  
+      <div class="testimonial-author">— Meena Devi, Farmer</div>
+    </div>
+  </section>
+
+  <section class="partners" aria-label="Our partners and sponsors">
+    <p>Supported by Trusted Organizations</p>
+    <div class="partner-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Coca-Cola_logo.svg/2560px-Coca-Cola_logo.svg.png" alt="Coca-Cola Logo" />
+      <img src="https://
